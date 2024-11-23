@@ -93,6 +93,24 @@ A modern collection of pure CSS loading animations featuring neon-inspired desig
     - Multi-colored orbs
     - Depth-based movement
 
+15. **Neon Ripple**
+
+    - Expanding circular waves
+    - Multi-colored segments
+    - Fading glow trails
+
+16. **Quantum Spinner**
+
+    - 3D orbital rings
+    - Intersecting planes
+    - Pulsing core particle
+
+17. **Circuit Board**
+
+    - Flowing data paths
+    - Pulsing connection nodes
+    - Tech-grid background
+
 ### Design Features
 
 - Modern neon color scheme

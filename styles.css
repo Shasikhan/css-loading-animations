@@ -750,46 +750,412 @@ header p {
     }
 }
 
-/* Enhanced hover effects for new animations */
-.loader-card:hover .clock-hand.hours {
-    animation-duration: 3s;
+/* Quantum Spinner Animation */
+.quantum-spinner {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 800px;
 }
 
-.loader-card:hover .clock-hand.minutes {
-    animation-duration: 1.5s;
+.quantum-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: quantum-float 6s ease-in-out infinite;
 }
 
-.loader-card:hover .particle {
-    animation-duration: 2s;
+.quantum-orbits {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: quantum-spin 12s linear infinite;
+}
+
+.quantum-orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.quantum-orbit:nth-child(1) {
+    transform: rotateX(60deg) rotateY(0deg);
+}
+
+.quantum-orbit:nth-child(2) {
+    transform: rotateX(60deg) rotateY(120deg);
+}
+
+.quantum-orbit:nth-child(3) {
+    transform: rotateX(60deg) rotateY(240deg);
+}
+
+.quantum-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transform-style: preserve-3d;
+}
+
+.quantum-orbit:nth-child(1) .quantum-ring {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink);
+    animation: ring-pulse 3s ease-in-out infinite;
+}
+
+.quantum-orbit:nth-child(2) .quantum-ring {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+    animation: ring-pulse 3s ease-in-out infinite;
+    animation-delay: -1s;
+}
+
+.quantum-orbit:nth-child(3) .quantum-ring {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 15px var(--neon-purple);
+    animation: ring-pulse 3s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.quantum-electron {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    transform-style: preserve-3d;
+    animation: electron-orbit 3s linear infinite;
+    top: 50%;
+    left: 50%;
+    filter: blur(0.5px);
+}
+
+.quantum-electron-sphere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    top: 0;
+    left: 0;
+}
+
+.quantum-electron-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    transform: translate(-50%, -50%);
+}
+
+.quantum-orbit:nth-child(1) .quantum-electron {
+    animation-timing-function: linear;
+}
+
+.quantum-orbit:nth-child(1) .quantum-electron-face {
+    background: var(--neon-pink);
+    box-shadow: 
+        0 0 4px var(--neon-pink),
+        0 0 8px var(--neon-pink);
+}
+
+.quantum-orbit:nth-child(2) .quantum-electron {
+    animation-direction: reverse;
+}
+
+.quantum-orbit:nth-child(2) .quantum-electron-face {
+    background: var(--neon-blue);
+    box-shadow: 
+        0 0 4px var(--neon-blue),
+        0 0 8px var(--neon-blue);
+}
+
+.quantum-orbit:nth-child(3) .quantum-electron {
+    animation-delay: -1s;
+}
+
+.quantum-orbit:nth-child(3) .quantum-electron-face {
+    background: var(--neon-purple);
+    box-shadow: 
+        0 0 4px var(--neon-purple),
+        0 0 8px var(--neon-purple);
+}
+
+.quantum-core {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px var(--neon-blue);
+    animation: core-pulse 2s ease-in-out infinite;
+}
+
+.quantum-core::before,
+.quantum-core::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--neon-pink);
+    opacity: 0.5;
+    filter: blur(2px);
+    animation: core-glow 3s linear infinite;
+}
+
+.quantum-core::after {
+    background: var(--neon-purple);
+    animation: core-glow 3s linear infinite reverse;
+}
+
+@keyframes quantum-float {
+    0%, 100% {
+        transform: translateY(-2px) rotateX(20deg);
+    }
+    50% {
+        transform: translateY(2px) rotateX(-20deg);
+    }
+}
+
+@keyframes quantum-spin {
+    from {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: rotateY(360deg) rotateX(360deg);
+    }
+}
+
+@keyframes ring-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+        border-width: 3px;
+    }
+    50% {
+        transform: scale(0.95);
+        opacity: 0.5;
+        border-width: 4px;
+    }
+}
+
+@keyframes electron-orbit {
+    0% {
+        transform: rotate(0deg) translateX(25px);
+    }
+    100% {
+        transform: rotate(360deg) translateX(25px);
+    }
+}
+
+@keyframes core-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 20px var(--neon-blue);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        box-shadow: 0 0 30px var(--neon-blue);
+    }
+}
+
+@keyframes core-glow {
+    0% {
+        transform: scale(1.2) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.8) rotate(180deg);
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1.2) rotate(360deg);
+        opacity: 0.5;
+    }
 }
 
 /* Enhanced hover effects */
-.loader-card:hover .cube {
+.loader-card:hover .quantum-orbits {
+    animation-duration: 8s;
+}
+
+.loader-card:hover .quantum-ring {
     animation-duration: 2s;
 }
 
-.loader-card:hover .matrix span {
-    animation-duration: 0.8s;
-}
-
-.loader-card:hover .infinity span {
-    animation-duration: 1s;
-}
-
-.loader-card:hover .gear::before {
+.loader-card:hover .quantum-electron {
     animation-duration: 2s;
 }
 
-.loader-card:hover .pendulum::before {
-    animation-duration: 1s;
+.loader-card:hover .quantum-core::before,
+.loader-card:hover .quantum-core::after {
+    animation-duration: 2s;
 }
 
-.loader-card:hover .reactor-ring {
+/* Neon Ripple Animation */
+.neon-ripple {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.ripple-circle {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple-expand 2s ease-out infinite;
+}
+
+.ripple-circle:nth-child(1) {
+    border-top-color: var(--neon-pink);
+    animation-delay: 0s;
+}
+
+.ripple-circle:nth-child(2) {
+    border-right-color: var(--neon-blue);
+    animation-delay: 0.5s;
+}
+
+.ripple-circle:nth-child(3) {
+    border-bottom-color: var(--neon-purple);
+    animation-delay: 1s;
+}
+
+.ripple-circle:nth-child(4) {
+    border-left-color: var(--neon-pink);
+    animation-delay: 1.5s;
+}
+
+@keyframes ripple-expand {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+        box-shadow: 0 0 15px currentColor;
+    }
+    100% {
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+        box-shadow: 0 0 5px currentColor;
+    }
+}
+
+/* Circuit Board Animation */
+.circuit-board {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background: linear-gradient(45deg, 
+        transparent 25%, 
+        rgba(255, 45, 117, 0.1) 25%, 
+        rgba(255, 45, 117, 0.1) 50%, 
+        transparent 50%
+    );
+    background-size: 10px 10px;
+}
+
+.circuit-path {
+    position: absolute;
+    background: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.circuit-path.horizontal {
+    height: 2px;
+    animation: circuit-flow-h 2s linear infinite;
+}
+
+.circuit-path.vertical {
+    width: 2px;
+    animation: circuit-flow-v 2s linear infinite;
+}
+
+.circuit-node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-blue);
+    animation: circuit-pulse 2s ease-in-out infinite;
+}
+
+/* Circuit paths positioning */
+.circuit-path:nth-child(1) {
+    width: 30px;
+    top: 20%;
+    left: 10%;
+}
+
+.circuit-path:nth-child(2) {
+    height: 30px;
+    top: 20%;
+    right: 20%;
+}
+
+.circuit-path:nth-child(3) {
+    width: 20px;
+    bottom: 30%;
+    right: 10%;
+}
+
+.circuit-path:nth-child(4) {
+    height: 25px;
+    bottom: 10%;
+    left: 30%;
+}
+
+/* Circuit nodes positioning */
+.circuit-node:nth-child(5) { top: 20%; left: 40%; animation-delay: 0s; }
+.circuit-node:nth-child(6) { top: 20%; right: 20%; animation-delay: 0.5s; }
+.circuit-node:nth-child(7) { bottom: 30%; right: 30%; animation-delay: 1s; }
+.circuit-node:nth-child(8) { bottom: 10%; left: 30%; animation-delay: 1.5s; }
+
+@keyframes circuit-flow-h {
+    0% { transform: scaleX(0); transform-origin: left; }
+    49% { transform: scaleX(1); transform-origin: left; }
+    50% { transform: scaleX(1); transform-origin: right; }
+    100% { transform: scaleX(0); transform-origin: right; }
+}
+
+@keyframes circuit-flow-v {
+    0% { transform: scaleY(0); transform-origin: top; }
+    49% { transform: scaleY(1); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes circuit-pulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 10px var(--neon-blue);
+    }
+    50% { 
+        transform: scale(1.2);
+        box-shadow: 0 0 20px var(--neon-blue);
+    }
+}
+
+/* Enhanced hover effects for new animations */
+.loader-card:hover .ripple-circle {
     animation-duration: 1.5s;
 }
 
-.loader-card:hover .digital span {
-    animation-duration: 0.75s;
+.loader-card:hover .circuit-path {
+    animation-duration: 1.5s;
 }
 
 /* Footer Styles */
