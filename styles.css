@@ -92,6 +92,7 @@ header p {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 .loader-card:hover {
@@ -365,6 +366,41 @@ header p {
         transform: scaleY(2);
         opacity: 0.5;
     }
+}
+
+/* Matrix Rain Animation */
+.matrix-loader {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.matrix-column {
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        transparent 0%,
+        var(--neon-blue) 50%,
+        transparent 100%);
+    animation: matrix-rain-fall 1.5s infinite;
+    opacity: 0;
+}
+
+.matrix-column:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.matrix-column:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes matrix-rain-fall {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100%); opacity: 0; }
 }
 
 /* Infinity Animation */
@@ -1241,6 +1277,60 @@ header p {
     animation-duration: 1.5s;
 }
 
+/* Neural Pulse Animation */
+.neural-pulse {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.pulse-node {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--neon-pink);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px var(--neon-pink);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.pulse-rings {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--neon-pink);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: pulse-expand 2s ease-out infinite;
+}
+
+.pulse-rings::before,
+.pulse-rings::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--neon-pink);
+    border-radius: 50%;
+    animation: pulse-expand 2s ease-out infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+@keyframes pulse-expand {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
 /* GitHub Corner */
 .github-corner {
     position: absolute;
@@ -1351,4 +1441,56 @@ footer a:hover {
     .animation-label {
         font-size: 1rem;
     }
+}
+
+/* Hologram Scanner Animation */
+.hologram-loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.hologram-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--neon-blue);
+    border-radius: 50%;
+    animation: hologram-rotate 4s linear infinite;
+}
+
+.hologram-scan {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--neon-blue);
+    top: 50%;
+    transform-origin: center;
+    animation: hologram-scan 2s ease-in-out infinite;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.hologram-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed var(--neon-blue);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: hologram-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hologram-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes hologram-scan {
+    0%, 100% { transform: translateY(-50%) rotate(0deg); opacity: 0.3; }
+    50% { transform: translateY(-50%) rotate(180deg); opacity: 1; }
+}
+
+@keyframes hologram-pulse {
+    0%, 100% { transform: scale(0.8); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.7; }
 }
