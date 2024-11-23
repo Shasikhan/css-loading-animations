@@ -4,6 +4,26 @@ A modern collection of pure CSS loading animations featuring neon-inspired desig
 
 [Live Demo](https://shasikhan.github.io/css-loading-animations/)
 
+## About The Project
+
+CSS Animation Showcase is an open-source project dedicated to demonstrating the power and creativity of pure CSS animations. By focusing on a cyberpunk-inspired aesthetic, we create engaging loading animations that are both visually stunning and performant.
+
+### Goals
+
+- Showcase creative possibilities with pure CSS animations
+- Provide learning resources for CSS animation techniques
+- Demonstrate performance-optimized animation practices
+- Foster a collaborative community around CSS animation
+- Promote accessibility in web animations
+
+### Community Standards
+
+- **Open Source**: All code is freely available and open for contribution
+- **Beginner Friendly**: Well-documented code with clear examples
+- **Quality Focused**: Emphasis on performance and best practices
+- **Inclusive**: Welcoming environment for all skill levels
+- **AI Enhanced**: Leveraging AI for consistent, high-quality animations
+
 ### Design Features
 
 - Modern neon color scheme
@@ -65,9 +85,42 @@ The project uses CSS custom properties for easy color customization. Modify the 
 
 Each animation's duration can be adjusted by modifying the `animation-duration` property in their respective CSS classes.
 
+## Issues and Support
+
+### Reporting Issues
+
+If you find a bug or have a suggestion:
+
+1. First, check if the issue already exists in our [Issues](https://github.com/yourusername/css-animation-showcase/issues) page
+2. If not, create a new issue with:
+   - Clear description of the problem
+   - Steps to reproduce
+   - Expected vs actual behavior
+   - Browser and OS information
+   - Screenshots if applicable
+
+### Security
+
+For security issues:
+
+- **DO NOT** create a public issue
+- Email security concerns directly to [your-email@example.com]
+- Include detailed information about the vulnerability
+- We'll respond within 48 hours
+
 ## Contributing
 
-To maintain consistency and quality across all animations:
+We welcome contributions from developers of all skill levels! Here's how you can help:
+
+### Ways to Contribute
+
+- Add new animations
+- Fix bugs and improve performance
+- Improve documentation
+- Add translations
+- Report issues and suggest features
+
+### Getting Started
 
 1. All new loading animations **must** be created using AI (preferably using [Windsurf](https://codeium.com/windsurf))
 2. Fork the repository
@@ -81,7 +134,13 @@ To maintain consistency and quality across all animations:
 6. Push to the branch (`git push origin feature/amazing-animation`)
 7. Open a Pull Request
 
-Please note that this project is released with a [Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+### Community Guidelines
+
+- Follow our [Code of Conduct](CODE_OF_CONDUCT.md)
+- Write descriptive commit messages
+- Document your changes thoroughly
+- Test your animations across different browsers
+- Be respectful and constructive in discussions
 
 **Note**: Manual code modifications should be limited to bug fixes and improvements to existing animations. New animations should come from AI to ensure they match the project's style and complexity.
 
