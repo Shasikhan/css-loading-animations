@@ -405,7 +405,226 @@ header p {
     }
 }
 
-/* Enhanced hover effects for all loaders */
+/* Gear Animation */
+.gear {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.gear::before, .gear::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0deg, 
+        transparent 0deg 15deg,
+        var(--neon-pink) 15deg 45deg,
+        transparent 45deg 60deg,
+        var(--neon-blue) 60deg 90deg,
+        transparent 90deg 105deg,
+        var(--neon-pink) 105deg 135deg,
+        transparent 135deg 150deg,
+        var(--neon-blue) 150deg 180deg,
+        transparent 180deg 195deg,
+        var(--neon-pink) 195deg 225deg,
+        transparent 225deg 240deg,
+        var(--neon-blue) 240deg 270deg,
+        transparent 270deg 285deg,
+        var(--neon-pink) 285deg 315deg,
+        transparent 315deg 330deg,
+        var(--neon-blue) 330deg 360deg
+    );
+    border-radius: 50%;
+    animation: gear-spin 3s linear infinite;
+}
+
+.gear::after {
+    width: 40%;
+    height: 40%;
+    background: var(--neon-purple);
+    top: 30%;
+    left: 30%;
+    animation: none;
+    box-shadow: 0 0 15px var(--neon-purple);
+}
+
+@keyframes gear-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Pendulum Animation */
+.pendulum {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+
+.pendulum::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: var(--neon-pink);
+    top: 0;
+    left: 50%;
+    transform-origin: top;
+    animation: swing 1.5s ease-in-out infinite;
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.pendulum::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    top: 30px;
+    left: calc(50% - 6px);
+    box-shadow: 0 0 15px var(--neon-blue);
+    animation: glow 1.5s ease-in-out infinite;
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(30deg); }
+    50% { transform: rotate(-30deg); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 15px var(--neon-blue); }
+    50% { box-shadow: 0 0 25px var(--neon-blue); }
+}
+
+/* Reactor Animation */
+.reactor {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.reactor-ring {
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    animation: reactor-spin 3s linear infinite;
+}
+
+.reactor-ring:nth-child(1) {
+    width: 60px;
+    height: 60px;
+    border-top: 2px solid var(--neon-pink);
+    border-bottom: 2px solid var(--neon-blue);
+    animation-duration: 3s;
+}
+
+.reactor-ring:nth-child(2) {
+    width: 46px;
+    height: 46px;
+    top: 7px;
+    left: 7px;
+    border-left: 2px solid var(--neon-purple);
+    border-right: 2px solid var(--neon-blue);
+    animation-duration: 2s;
+    animation-direction: reverse;
+}
+
+.reactor-ring:nth-child(3) {
+    width: 32px;
+    height: 32px;
+    top: 14px;
+    left: 14px;
+    border: 2px solid var(--neon-pink);
+    animation-duration: 1s;
+}
+
+.reactor::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    top: 22px;
+    left: 22px;
+    box-shadow: 0 0 20px var(--neon-blue);
+    animation: reactor-core 2s ease-in-out infinite;
+}
+
+@keyframes reactor-spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes reactor-core {
+    0%, 100% { 
+        transform: scale(0.8);
+        box-shadow: 0 0 20px var(--neon-blue);
+    }
+    50% { 
+        transform: scale(1);
+        box-shadow: 0 0 30px var(--neon-blue);
+    }
+}
+
+/* Digital Clock Animation */
+.digital {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.digital span {
+    width: 4px;
+    height: 20px;
+    background: var(--neon-purple);
+    animation: digital-blink 1s steps(2, start) infinite;
+    box-shadow: 0 0 10px var(--neon-purple);
+    position: relative;
+}
+
+.digital span::before,
+.digital span::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--neon-pink);
+    left: 0;
+    animation: digital-dot 1s steps(2, start) infinite;
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.digital span::before { top: -8px; }
+.digital span::after { bottom: -8px; }
+
+.digital span:nth-child(2) {
+    animation-delay: 0.33s;
+}
+
+.digital span:nth-child(3) {
+    animation-delay: 0.66s;
+}
+
+@keyframes digital-blink {
+    0%, 100% { opacity: 1; height: 20px; }
+    50% { opacity: 0.5; height: 15px; }
+}
+
+@keyframes digital-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Enhanced hover effects */
 .loader-card:hover .cube {
     animation-duration: 2s;
 }
@@ -416,6 +635,22 @@ header p {
 
 .loader-card:hover .infinity span {
     animation-duration: 1s;
+}
+
+.loader-card:hover .gear::before {
+    animation-duration: 2s;
+}
+
+.loader-card:hover .pendulum::before {
+    animation-duration: 1s;
+}
+
+.loader-card:hover .reactor-ring {
+    animation-duration: 1.5s;
+}
+
+.loader-card:hover .digital span {
+    animation-duration: 0.5s;
 }
 
 /* Footer Styles */
