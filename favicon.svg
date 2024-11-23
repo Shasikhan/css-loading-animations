@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+            0% { r: 8; opacity: 0.8; }
+            50% { r: 10; opacity: 1; }
+            100% { r: 8; opacity: 0.8; }
+        }
+        .outer-circle {
+            animation: rotate 3s linear infinite;
+            transform-origin: center;
+        }
+        .inner-circle {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+    <g class="outer-circle">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="#ff2d75" stroke-width="2" opacity="0.6"/>
+        <circle class="inner-circle" cx="16" cy="16" r="8" fill="#0ff"/>
+    </g>
+</svg>
