@@ -81,6 +81,8 @@ To maintain consistency and quality across all animations:
 6. Push to the branch (`git push origin feature/amazing-animation`)
 7. Open a Pull Request
 
+Please note that this project is released with a [Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 **Note**: Manual code modifications should be limited to bug fixes and improvements to existing animations. New animations should come from AI to ensure they match the project's style and complexity.
 
 ## License
