@@ -1241,6 +1241,28 @@ header p {
     animation-duration: 1.5s;
 }
 
+/* Coming Soon Styles */
+.coming-soon {
+    color: var(--neon-blue);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-shadow: 0 0 10px var(--neon-blue);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px var(--neon-blue),
+                     0 0 10px var(--neon-blue);
+    }
+    to {
+        text-shadow: 0 0 10px var(--neon-blue),
+                     0 0 20px var(--neon-blue),
+                     0 0 30px var(--neon-blue);
+    }
+}
+
 /* Footer Styles */
 footer {
     text-align: center;
