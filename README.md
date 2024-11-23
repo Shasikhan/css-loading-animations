@@ -75,11 +75,11 @@ A modern collection of pure CSS loading animations featuring neon-inspired desig
     - Counter-rotating elements
     - Pulsing energy core
 
-12. **Digital**
+12. **Digital Equalizer**
 
-    - Retro-style loading indicator
-    - Synchronized blinking bars
-    - Neon dot accents
+    - Audio equalizer-inspired design
+    - Color-shifting vertical bars
+    - Synchronized pulsing motion
 
 ### Design Features
 

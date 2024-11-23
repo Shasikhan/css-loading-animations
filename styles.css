@@ -579,15 +579,16 @@ header p {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3px;
+    gap: 4px;
 }
 
 .digital span {
-    width: 4px;
-    height: 20px;
+    width: 6px;
+    height: 25px;
     background: var(--neon-purple);
-    animation: digital-blink 1s steps(2, start) infinite;
-    box-shadow: 0 0 10px var(--neon-purple);
+    animation: digital-pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 15px var(--neon-purple);
+    border-radius: 3px;
     position: relative;
 }
 
@@ -595,33 +596,36 @@ header p {
 .digital span::after {
     content: '';
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     background: var(--neon-pink);
+    border-radius: 50%;
     left: 0;
-    animation: digital-dot 1s steps(2, start) infinite;
     box-shadow: 0 0 10px var(--neon-pink);
 }
 
-.digital span::before { top: -8px; }
-.digital span::after { bottom: -8px; }
+.digital span::before { top: -10px; }
+.digital span::after { bottom: -10px; }
 
 .digital span:nth-child(2) {
-    animation-delay: 0.33s;
+    animation-delay: 0.2s;
 }
 
 .digital span:nth-child(3) {
-    animation-delay: 0.66s;
+    animation-delay: 0.4s;
 }
 
-@keyframes digital-blink {
-    0%, 100% { opacity: 1; height: 20px; }
-    50% { opacity: 0.5; height: 15px; }
-}
-
-@keyframes digital-dot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
+@keyframes digital-pulse {
+    0%, 100% { 
+        height: 25px;
+        background: var(--neon-purple);
+        box-shadow: 0 0 15px var(--neon-purple);
+    }
+    50% { 
+        height: 15px;
+        background: var(--neon-blue);
+        box-shadow: 0 0 25px var(--neon-blue);
+    }
 }
 
 /* Enhanced hover effects */
@@ -650,7 +654,7 @@ header p {
 }
 
 .loader-card:hover .digital span {
-    animation-duration: 0.5s;
+    animation-duration: 0.75s;
 }
 
 /* Footer Styles */
