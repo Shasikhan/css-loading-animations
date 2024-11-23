@@ -1,3 +1,6 @@
+/* Main Styles */
+@import url('components/cyber-bars-loader.css');
+
 /* CSS Animation Showcase Styles */
 :root {
     --bg-color: #0a0a0a;
