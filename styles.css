@@ -123,10 +123,10 @@ header p {
 
 .loading-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(5, 1fr); /* Exactly 5 columns */
     gap: 2rem;
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1400px; /* Increased to accommodate 5 boxes */
     margin: 0 auto;
 }
 
@@ -168,6 +168,58 @@ header p {
 
 .loader {
     position: relative;
+}
+
+/* Responsive Grid */
+@media (max-width: 1400px) {
+    .loading-container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .loading-container {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .loading-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+        max-width: 600px;
+    }
+
+    .loader-card {
+        min-height: 150px;
+    }
+
+    .animation-item {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .loader-card {
+        min-height: 130px;
+    }
+
+    .animation-item {
+        transform: scale(0.85);
+    }
+
+    .animation-label {
+        font-size: 0.9rem;
+    }
 }
 
 /* Spinner Animation */
@@ -1476,20 +1528,6 @@ footer a:hover {
     
     header p {
         font-size: 1rem;
-    }
-    
-    .loading-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .loader-card {
-        min-height: 150px;
-    }
-
-    .animation-item {
-        transform: scale(0.9);
     }
 }
 
