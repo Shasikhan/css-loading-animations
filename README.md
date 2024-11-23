@@ -152,11 +152,21 @@ Each animation's duration can be adjusted by modifying the `animation-duration` 
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+To maintain consistency and quality across all animations:
+
+1. All new loading animations **must** be created using AI (preferably using [Windsurf](https://codeium.com/windsurf))
+2. Fork the repository
+3. Create your feature branch (`git checkout -b feature/amazing-animation`)
+4. Have AI generate the animation with:
+   - Pure CSS implementation (no JavaScript)
+   - Neon color scheme using existing variables
+   - Responsive design
+   - Interactive hover effects
+5. Commit your changes (`git commit -m 'Add amazing animation'`)
+6. Push to the branch (`git push origin feature/amazing-animation`)
+7. Open a Pull Request
+
+**Note**: Manual code modifications should be limited to bug fixes and improvements to existing animations. New animations should come from AI to ensure they match the project's style and complexity.
 
 ## License
 
