@@ -1,12 +1,69 @@
 /* CSS Animation Showcase Styles */
 :root {
-    --bg-color: #0a0a0a;
+    /* Default Theme */
+    --theme-name: 'Neon Blue';
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-purple: #bc13fe;
+    --bg-color-1: #000000;
+    --bg-color-2: #1a1a1a;
+    --bg-color: var(--bg-color-1);
     --card-bg: rgba(255, 255, 255, 0.03);
-    --neon-pink: #ff2d75;
-    --neon-blue: #0ff;
-    --neon-purple: #b300ff;
-    --gradient-start: #1a1a1a;
-    --gradient-end: #2d1f3d;
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+/* Theme Variations */
+[data-theme="synthwave"] {
+    --theme-name: 'Synthwave';
+    --neon-blue: #ff2a6d;
+    --neon-pink: #05ffa1;
+    --neon-purple: #7700ff;
+    --bg-color-1: #1a1a2e;
+    --bg-color-2: #16213e;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+[data-theme="matrix"] {
+    --theme-name: 'Matrix';
+    --neon-blue: #00ff00;
+    --neon-pink: #39ff14;
+    --neon-purple: #04d9ff;
+    --bg-color-1: #001a00;
+    --bg-color-2: #002600;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+[data-theme="outrun"] {
+    --theme-name: 'Outrun';
+    --neon-blue: #ff00ff;
+    --neon-pink: #00ffff;
+    --neon-purple: #ff9900;
+    --bg-color-1: #000033;
+    --bg-color-2: #1a0033;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+[data-theme="vapor"] {
+    --theme-name: 'Vaporwave';
+    --neon-blue: #ff71ce;
+    --neon-pink: #01cdfe;
+    --neon-purple: #b967ff;
+    --bg-color-1: #05004e;
+    --bg-color-2: #290025;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
 }
 
 * {
@@ -65,12 +122,12 @@ header p {
 }
 
 .loading-container {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin: 2rem auto;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 .animation-item {
@@ -1422,16 +1479,37 @@ footer a:hover {
     }
     
     .loading-container {
-        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
     }
-    
+
     .loader-card {
-        width: 160px;
-        height: 160px;
+        min-height: 150px;
     }
-    
+
+    .animation-item {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    .loader-card {
+        min-height: 130px;
+    }
+
+    .animation-item {
+        transform: scale(0.85);
+    }
+
     .animation-label {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -1824,4 +1902,95 @@ footer a:hover {
     40%, 41% { opacity: 0.3; transform: scaleY(0.5); }
     60%, 61% { opacity: 0.3; transform: scaleY(1.5); }
     80%, 81% { opacity: 0.3; transform: scaleY(0.5); }
+}
+
+/* Theme Switcher Styles */
+.theme-switcher {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+.theme-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.theme-panel {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+    width: 200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.theme-panel.active {
+    display: block;
+    animation: slideUp 0.3s ease;
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.theme-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-option.active {
+    background: var(--neon-blue);
+    color: black;
+}
+
+.theme-color-preview {
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.color-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
