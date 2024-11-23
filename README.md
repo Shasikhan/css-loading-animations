@@ -91,7 +91,7 @@ Each animation's duration can be adjusted by modifying the `animation-duration` 
 
 If you find a bug or have a suggestion:
 
-1. First, check if the issue already exists in our [Issues](https://github.com/yourusername/css-animation-showcase/issues) page
+1. First, check if the issue already exists in our [Issues](https://github.com/shasikhan/css-animation-showcase/issues) page
 2. If not, create a new issue with:
    - Clear description of the problem
    - Steps to reproduce
@@ -101,12 +101,7 @@ If you find a bug or have a suggestion:
 
 ### Security
 
-For security issues:
-
-- **DO NOT** create a public issue
-- Email security concerns directly to [your-email@example.com]
-- Include detailed information about the vulnerability
-- We'll respond within 48 hours
+For security concerns, please review our [Security Policy](SECURITY.md) before submitting a report.
 
 ## Contributing
 
