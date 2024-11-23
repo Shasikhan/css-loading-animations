@@ -2,7 +2,7 @@
 
 A modern collection of pure CSS loading animations featuring neon-inspired design effects. This project demonstrates various animation techniques using CSS3, including 3D transforms, keyframe animations, and modern visual effects.
 
-🌐 [Live Demo](https://shasikhan.github.io/css-loading-animations/)
+ [Live Demo](https://shasikhan.github.io/css-loading-animations/)
 
 ![Loading Animations Preview](preview.gif)
 
@@ -56,6 +56,30 @@ A modern collection of pure CSS loading animations featuring neon-inspired desig
    - Smooth infinity symbol animation
    - Continuous rotation
    - Neon purple trails
+
+9. **Gear**
+
+   - Rotating mechanical gear design
+   - Conic gradient segments
+   - Dynamic core glow effects
+
+10. **Pendulum**
+
+    - Hypnotic swinging motion
+    - Glowing neon orb weight
+    - Dynamic shadow trails
+
+11. **Reactor**
+
+    - Triple concentric ring system
+    - Counter-rotating elements
+    - Pulsing energy core
+
+12. **Digital**
+
+    - Retro-style loading indicator
+    - Synchronized blinking bars
+    - Neon dot accents
 
 ### Design Features
 
