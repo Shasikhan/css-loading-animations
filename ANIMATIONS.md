@@ -43,6 +43,7 @@
    - Neon glow effects
 
 8. **Infinity**
+
    - Smooth infinity symbol animation
    - Continuous rotation
    - Neon purple trails
@@ -107,3 +108,17 @@
     - Synchronized data points
     - Wave pulse effects
     - Interactive animations
+
+19. **Cyber Hex**
+
+    - Three rotating hexagonal shapes
+    - Nested design with different scales
+    - Alternating rotation directions
+    - Uses neon blue, pink, and purple colors
+
+20. **Data Stream**
+
+    - Particles flowing in a square pattern
+    - Multiple particles with different colors
+    - Staggered animation delays
+    - Glowing effect with box-shadows

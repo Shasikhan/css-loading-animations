@@ -1521,3 +1521,119 @@ footer a:hover {
     0%, 100% { transform: scale(0.8); opacity: 0.3; }
     50% { transform: scale(1.2); opacity: 0.7; }
 }
+
+/* Cyber Hex Animation */
+.cyber-hex {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hex-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    transform: rotate(30deg);
+}
+
+.hex-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--neon-blue);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: hex-rotate 3s infinite linear;
+}
+
+.hex-item:nth-child(2) {
+    transform: scale(0.8);
+    border-color: var(--neon-pink);
+    animation-direction: reverse;
+}
+
+.hex-item:nth-child(3) {
+    transform: scale(0.6);
+    border-color: var(--neon-purple);
+    animation-duration: 2s;
+}
+
+@keyframes hex-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Data Stream Animation */
+.data-stream {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.data-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-blue);
+    animation: data-flow 2s infinite;
+}
+
+.data-particle:nth-child(2) {
+    animation-delay: 0.4s;
+    background: var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.data-particle:nth-child(3) {
+    animation-delay: 0.8s;
+    background: var(--neon-purple);
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.data-particle:nth-child(4) {
+    animation-delay: 1.2s;
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.data-particle:nth-child(5) {
+    animation-delay: 1.6s;
+    background: var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+@keyframes data-flow {
+    0% {
+        top: 0;
+        left: 0;
+        opacity: 1;
+    }
+    25% {
+        top: 0;
+        left: 100%;
+        opacity: 0.8;
+    }
+    50% {
+        top: 100%;
+        left: 100%;
+        opacity: 0.6;
+    }
+    75% {
+        top: 100%;
+        left: 0;
+        opacity: 0.8;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        opacity: 1;
+    }
+}
