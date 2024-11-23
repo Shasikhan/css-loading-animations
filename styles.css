@@ -1001,6 +1001,89 @@ header p {
     animation-duration: 2s;
 }
 
+/* Data Stream Animation */
+.data-pulse {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.data-wave {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--neon-blue);
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px var(--neon-blue);
+    animation: wave-pulse 2s ease-in-out infinite;
+}
+
+.data-points {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.point {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--neon-pink);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+.point:nth-child(1) {
+    left: 20%;
+    top: 50%;
+    animation: point-move 2s ease-in-out infinite;
+}
+
+.point:nth-child(2) {
+    left: 40%;
+    top: 50%;
+    animation: point-move 2s ease-in-out infinite 0.5s;
+}
+
+.point:nth-child(3) {
+    left: 60%;
+    top: 50%;
+    animation: point-move 2s ease-in-out infinite 1s;
+}
+
+.point:nth-child(4) {
+    left: 80%;
+    top: 50%;
+    animation: point-move 2s ease-in-out infinite 1.5s;
+}
+
+@keyframes wave-pulse {
+    0%, 100% {
+        transform: translateY(-50%) scaleY(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-50%) scaleY(2);
+        opacity: 1;
+    }
+}
+
+@keyframes point-move {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.5;
+    }
+}
+
+.loader-card:hover .data-wave {
+    animation-duration: 1.5s;
+}
+
 /* Neon Ripple Animation */
 .neon-ripple {
     width: 60px;
