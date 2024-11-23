@@ -81,6 +81,18 @@ A modern collection of pure CSS loading animations featuring neon-inspired desig
     - Color-shifting vertical bars
     - Synchronized pulsing motion
 
+13. **Neon Clock**
+
+    - Glowing clock face
+    - Dual-speed hands
+    - Pulsing center core
+
+14. **Particle Field**
+
+    - Floating 3D particles
+    - Multi-colored orbs
+    - Depth-based movement
+
 ### Design Features
 
 - Modern neon color scheme
