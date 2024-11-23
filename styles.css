@@ -66,6 +66,84 @@
     --gradient-end: var(--bg-color-2);
 }
 
+[data-theme="cyber-yellow"] {
+    --theme-name: 'Cyber Yellow';
+    --neon-blue: #ffd700;
+    --neon-pink: #ff6b6b;
+    --neon-purple: #4a90e2;
+    --bg-color-1: #1a1a1a;
+    --bg-color-2: #2d2d2d;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+[data-theme="quantum"] {
+    --theme-name: 'Quantum';
+    --neon-blue: #0ff0fc;
+    --neon-pink: #ff3864;
+    --neon-purple: #8f00ff;
+    --bg-color-1: #0d0221;
+    --bg-color-2: #190835;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+[data-theme="cyber-green"] {
+    --theme-name: 'Cyber Green';
+    --neon-blue: #00ff9f;
+    --neon-pink: #00b8ff;
+    --neon-purple: #4deeea;
+    --bg-color-1: #002626;
+    --bg-color-2: #004040;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+[data-theme="neon-night"] {
+    --theme-name: 'Neon Night';
+    --neon-blue: #fe00fe;
+    --neon-pink: #00fefe;
+    --neon-purple: #fff600;
+    --bg-color-1: #000066;
+    --bg-color-2: #200033;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+[data-theme="retro-cyber"] {
+    --theme-name: 'Retro Cyber';
+    --neon-blue: #f0e68c;
+    --neon-pink: #ff1493;
+    --neon-purple: #00ffff;
+    --bg-color-1: #191970;
+    --bg-color-2: #4b0082;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
+[data-theme="plasma"] {
+    --theme-name: 'Plasma';
+    --neon-blue: #ff3399;
+    --neon-pink: #00ff00;
+    --neon-purple: #ff6600;
+    --bg-color-1: #000000;
+    --bg-color-2: #1a0f33;
+    --bg-color: var(--bg-color-1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --gradient-start: var(--bg-color-1);
+    --gradient-end: var(--bg-color-2);
+}
+
 * {
     margin: 0;
     padding: 0;
