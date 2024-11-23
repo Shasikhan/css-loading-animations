@@ -105,7 +105,7 @@ For security concerns, please review our [Security Policy](SECURITY.md) before s
 
 ## Contributing
 
-- Follow our [Contributing Guidelines](CONTRIBUTING.md)
+To contribute to this project, follow our [Contributing Guidelines](CONTRIBUTING.md)
 
 ### Community Guidelines
 
