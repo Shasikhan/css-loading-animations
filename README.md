@@ -110,18 +110,6 @@ For security issues:
 
 ## Contributing
 
-We welcome contributions from developers of all skill levels! Here's how you can help:
-
-### Ways to Contribute
-
-- Add new animations
-- Fix bugs and improve performance
-- Improve documentation
-- Add translations
-- Report issues and suggest features
-
-### Getting Started
-
 - Follow our [Contributing Guidelines](CONTRIBUTING.md)
 
 ### Community Guidelines
