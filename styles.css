@@ -256,7 +256,8 @@ header p {
     width: 60px;
     height: 60px;
     position: relative;
-    perspective: 100px;
+    perspective: 150px;
+    transform-style: preserve-3d;
 }
 
 .helix span {
@@ -264,24 +265,43 @@ header p {
     width: 100%;
     height: 100%;
     border: 3px solid transparent;
-    border-top-color: var(--neon-pink);
-    border-bottom-color: var(--neon-blue);
     border-radius: 50%;
     animation: helix-spin 3s linear infinite;
 }
 
 .helix span:nth-child(1) {
-    animation-delay: -1.5s;
-    transform: rotateY(60deg);
+    border-left-color: var(--neon-pink);
+    border-right-color: var(--neon-blue);
+    animation-delay: -1s;
+}
+
+.helix span:nth-child(2) {
+    border-top-color: var(--neon-purple);
+    border-bottom-color: var(--neon-blue);
+    animation-delay: -0.5s;
+}
+
+.helix span:nth-child(3) {
+    border-left-color: var(--neon-blue);
+    border-right-color: var(--neon-pink);
 }
 
 @keyframes helix-spin {
     0% {
-        transform: rotateX(0deg) rotateY(0deg);
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
     100% {
-        transform: rotateX(360deg) rotateY(360deg);
+        transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
     }
+}
+
+.loader-card:hover .helix {
+    perspective: 200px;
+}
+
+.loader-card:hover .helix span {
+    animation-duration: 1.5s;
+    filter: drop-shadow(0 0 5px var(--neon-blue));
 }
 
 /* Cube Animation */
@@ -386,10 +406,6 @@ header p {
 }
 
 /* Enhanced hover effects for all loaders */
-.loader-card:hover .helix span {
-    animation-duration: 1.5s;
-}
-
 .loader-card:hover .cube {
     animation-duration: 2s;
 }
