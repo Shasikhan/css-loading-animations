@@ -1125,48 +1125,75 @@ header p {
     width: 60px;
     height: 60px;
     position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .ripple-circle {
     position: absolute;
+    width: 60px;
+    height: 60px;
     border: 2px solid transparent;
     border-radius: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: ripple-expand 2s ease-out infinite;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+    -webkit-animation: ripple-expand-new 2s ease-out infinite;
+    animation: ripple-expand-new 2s ease-out infinite;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .ripple-circle:nth-child(1) {
     border-top-color: var(--neon-pink);
+    -webkit-animation-delay: 0s;
     animation-delay: 0s;
 }
 
 .ripple-circle:nth-child(2) {
     border-right-color: var(--neon-blue);
+    -webkit-animation-delay: 0.5s;
     animation-delay: 0.5s;
 }
 
 .ripple-circle:nth-child(3) {
     border-bottom-color: var(--neon-purple);
+    -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
 
 .ripple-circle:nth-child(4) {
     border-left-color: var(--neon-pink);
+    -webkit-animation-delay: 1.5s;
     animation-delay: 1.5s;
 }
 
-@keyframes ripple-expand {
+@-webkit-keyframes ripple-expand-new {
     0% {
-        width: 0;
-        height: 0;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+        -webkit-box-shadow: 0 0 15px currentColor;
+        box-shadow: 0 0 15px currentColor;
+    }
+    100% {
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        -webkit-box-shadow: 0 0 5px currentColor;
+        box-shadow: 0 0 5px currentColor;
+    }
+}
+
+@keyframes ripple-expand-new {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
         opacity: 1;
         box-shadow: 0 0 15px currentColor;
     }
     100% {
-        width: 60px;
-        height: 60px;
+        transform: translate(-50%, -50%) scale(1);
         opacity: 0;
         box-shadow: 0 0 5px currentColor;
     }
