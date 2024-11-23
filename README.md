@@ -42,7 +42,7 @@ See the complete list of animations and their features in the [Animations List](
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/css-animation-showcase.git
+git clone https://github.com/shasikhan/css-animation-showcase.git
 ```
 
 2. Open `index.html` in a modern web browser.

@@ -1256,6 +1256,11 @@ header p {
     border: 0;
     fill: var(--neon-blue);
     color: var(--bg-color);
+    transition: fill 0.3s ease;
+}
+
+.github-corner:hover svg {
+    fill: var(--neon-pink);
 }
 
 .github-corner:hover .octo-arm {
