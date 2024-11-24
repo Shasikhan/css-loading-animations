@@ -201,11 +201,12 @@ header p {
 
 .loading-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Exactly 5 columns */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2rem;
     padding: 2rem;
-    max-width: 1400px; /* Increased to accommodate 5 boxes */
+    max-width: 1400px;
     margin: 0 auto;
+    place-items: center;
 }
 
 .animation-item {
@@ -213,6 +214,8 @@ header p {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    width: 100%;
+    max-width: 150px;
 }
 
 .loader-card {
@@ -266,13 +269,13 @@ header p {
 @media (max-width: 768px) {
     .loading-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
         padding: 1rem;
-        max-width: 600px;
+        gap: 1.5rem;
     }
 
     .loader-card {
-        min-height: 150px;
+        width: 130px;
+        height: 130px;
     }
 
     .animation-item {
@@ -283,12 +286,13 @@ header p {
 @media (max-width: 480px) {
     .loading-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-        padding: 0.8rem;
+        padding: 0.5rem;
+        gap: 1rem;
     }
 
     .loader-card {
-        min-height: 130px;
+        width: 130px;
+        height: 130px;
     }
 
     .animation-item {
@@ -1617,7 +1621,8 @@ footer a:hover {
     }
 
     .loader-card {
-        min-height: 130px;
+        width: 130px;
+        height: 130px;
     }
 
     .animation-item {
